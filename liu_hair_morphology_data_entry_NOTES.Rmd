@@ -1,0 +1,27 @@
+---
+title: "Liu et al. Data Entry Notes"
+author: "C A Laurin"
+date: "8 May 2018"
+output: html_document
+---
+
+# Liu's Supplementary Files
+- doi: 10.1093/hmg/ddx416
+## Supplementary Table 1.xlsx
+- Supplementary Table 1. Characteristics of the Study Populations				-	B5:B15, M5:M14
+- Percent signs "%", but no real text fields
+
+
+## Supplementary Table 2.xlsx
+- Supplementary Table 2. All SNPs showing genome-wide significant association with hair shape variation in the meta-analysis of three GWAS in QIMR (N=10,607), TwinsUK (N=3,347) and RS (N=2,809) and their replication in ERF (N=977), POL (N=635), CANDELA (N=6,238), US (N=743), UYG (N=709) and TZL (N=2,899), and meta-analysis of all 9 cohorts of European and non-European origins.
+- B4:B711, AZ4:AZ711
+- warnings in converting betas, allele frequencies, p values, and SE's with as.numeric()
+    + Check for special minus characters (em dashes and en dashes)
+
+## Other tables
+- Tables 3, 4 are about the significant markers
+- Table 5 has redundant information about EAFs
+- Table 6 is about replication of published SNPs
+- Table 7 is about the predictive performance of the discovered loci
+- Table 8: QIMR log reg
+- Table 9: baldness tests 
