@@ -1,0 +1,59 @@
+---
+title: "Ripke_data_Extract"
+author: "C A Laurin"
+date: "22 May 2018"
+output: html_document
+---
+
+# file: ng.940-S2.xlsx
+- NA = "n.a."
+
+## Sheet 1: Supplementary Table 1: Stage 1 GWAS Samples - Ascertainment, Phenotyping, and Demographics.																		
+
+- A3:S20
+- Cases and controls under nested headings 
+- years collected, ascertainment, instruments, exclusions will require parsing
+- Cardiff study gives median age
+
+## Sheet 2: Supplementary Table 2: Stage 2 Replication Samples - Ascertainment, Phenotyping, and Demographics.	
+- A3:S22
+- Same parsing issues as Sheet 1
+- Additional issues: 
+    + n.a. typo as n.a in J10, n.a. typo as n..a. in L22
+    + ASRB, BPS, OHBDC samples have different study-level covariates but data from
+    both are stored in row 21
+    + Much greater variety of case ascertainments 
+    + No average age at enrollment for Finnish samples (rows 11:12) set to NA
+- Bottom line: no $\lambda_{GC}$ values; possible to use as a control
+    + What's the harm of excluding ASRB/BPS/OHBDC in this context? Little.
+    + Sample $\lambda_{GC}$ values from Sheet 1
+    + Save as separate .csv file for the Shiny app.
+
+## Sheet 3:  Supplementary Table 3: Stage 1 Sample QC.				
+- Column names are A2:S2
+- Row 3: unnecessary
+- Data are A4:S20
+- Only Stage 1 studies have $\lambda_{GC}$ values (6 supplied per study)
+
+## Sheet 4: Top SNP regions
+## Sheet 5: conditional analyses of top SNPs
+## Sheet 6: Stage 2 assoc. results
+## Sheet 7: Top Loci
+## Sheet 8: Gene stuff
+## Sheet 9: GRS results
+## Sheet 10: Notable genes in signifcant regions
+## Sheet 11: Joint analyses of top SNPs
+## Sheet 12: Power analyses
+## Sheet 13: Data collection
+- _A_ coding of the ascertainment/inclusion/exclusion/diagnostic criteria
+    + Likely to be correlated with indicators
+- A2:R11 
+- But it is transposed
+    + Scores need to be renamed carefully
+    + yes/no's need to be converted to categories
+- Better approach: 
+    1. read in B2:R2 (study names), 
+    2. read in A3:A11 (data collection method, later to rename)
+    3. read in B3:R11 (data as characters "yes" and "no", parse to TRUE/FALSE)
+    
+## Sheet 14: Interaction analysis of SNPs
